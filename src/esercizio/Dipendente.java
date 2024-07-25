@@ -2,7 +2,7 @@ package esercizio;
 
 import java.util.Random;
 
-public abstract class Dipendente {
+public abstract class Dipendente implements Checkable {
     // attributi
     private int matricola;
     private int stipendio;
@@ -41,5 +41,11 @@ public abstract class Dipendente {
                 ", \nstipendio=" + stipendio +
                 ", \ndipartimento=" + dipartimento +
                 '}';
+    }
+
+    @Override
+    public void checkIn() {
+        System.out.println("-------Dipendente:-------\n" + this.matricola);
+        System.out.println("-------Inizio Turno--------");
     }
 }

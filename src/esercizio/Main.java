@@ -10,6 +10,7 @@ public class Main {
         System.out.println(dip1);
         System.out.println(dip2);
         System.out.println(dip3);*/
+
         // Esercizio 2
         Dipendente[] dipendenti = new Dipendente[3];
 
@@ -28,5 +29,25 @@ public class Main {
             stipendioTot += dipendente.calculateSalary();
         }
         System.out.println("--------Totale Stipendio Dipendenti: --------\n" + stipendioTot);
+
+        // Esercizio 3
+
+        Checkable[] persone = new Checkable[4];
+
+        persone[0] = new DipendenteFullTime(2000, Dipartimento.PRODUZIONE);
+        persone[1] = new DipendentePartTime(0, Dipartimento.VENDITE, 200, 30);
+        persone[2] = new Dirigente(0, Dipartimento.AMMINISTRAZIONE, 9000, 3000);
+        persone[3] = new Volontario("Pippo Baudo", 90, "Sono un bravo conduttore");
+
+        for (Checkable persona : persone) {
+            persona.checkIn();
+            if (persona instanceof Dipendente) {
+                Dipendente dipendente = (Dipendente) persona;
+                System.out.println(dipendente);
+                System.out.println("------Stipendio:------\n" + dipendente.calculateSalary());
+            } else {
+                System.out.println(persona);
+            }
+        }
     }
 }
