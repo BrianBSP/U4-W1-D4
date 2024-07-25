@@ -2,7 +2,7 @@ package esercizio;
 
 import java.util.Random;
 
-public class Dipendente {
+public abstract class Dipendente {
     // attributi
     private int matricola;
     private int stipendio;
@@ -23,6 +23,8 @@ public class Dipendente {
     public int getStipendio() {
         return stipendio;
     }
+
+    public abstract int calculateSalary();
 
     public Dipartimento getDipartimento() {
         return dipartimento;
